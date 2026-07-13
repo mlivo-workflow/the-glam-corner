@@ -122,6 +122,21 @@
     max-width:340px !important;border-radius:10px !important;box-shadow:var(--shadow) !important}
   .ig-link{text-align:center;margin-top:34px}
 
+  /* DOWNLOADS */
+  .downloads{background:linear-gradient(180deg,#faf5ec,#f4ebdb)}
+  .dl-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
+  .dl-card{background:#fff;border:1px solid #ecdfca;border-radius:12px;padding:26px 24px;
+    box-shadow:var(--shadow);display:flex;flex-direction:column;gap:10px;transition:.3s;text-align:left}
+  .dl-card:hover{transform:translateY(-5px);border-color:var(--gold)}
+  .dl-badge{width:46px;height:46px;border-radius:10px;background:linear-gradient(140deg,var(--gold),var(--gold-deep));
+    color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Jost';font-weight:600;
+    font-size:.66rem;letter-spacing:.06em}
+  .dl-name{font-family:'Cormorant Garamond',serif;font-size:1.4rem;color:var(--brown-dark);line-height:1.15}
+  .dl-desc{font-size:.86rem;color:var(--brown-soft);flex:1}
+  .dl-get{margin-top:6px;display:inline-flex;align-items:center;gap:8px;font-size:.74rem;font-weight:500;
+    letter-spacing:.1em;text-transform:uppercase;color:var(--gold-deep)}
+  .dl-get::after{content:"\2193";font-size:.95rem}
+
   /* CONTACT */
   .contact{background:linear-gradient(160deg,#4a3427,#3b2a1e);color:var(--cream)}
   .contact .section-head h2{color:var(--cream)}
@@ -167,6 +182,7 @@
       <a href="#about" data-i18n="nav_about">Über</a>
       <a href="#services" data-i18n="nav_services">Leistungen</a>
       <a href="#gallery" data-i18n="nav_gallery">Galerie</a>
+      <a href="#downloads" data-i18n="nav_downloads">Downloads</a>
       <a href="#contact" data-i18n="nav_contact">Kontakt</a>
       <div class="lang">
         <button data-lang="de" class="active">DE</button>
@@ -303,6 +319,51 @@
   </div>
 </section>
 
+<!-- DOWNLOADS -->
+<section class="downloads" id="downloads">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow" data-i18n="dl_eyebrow">Downloads</p>
+      <h2 data-i18n="dl_title">Dokumente & Guides</h2>
+      <p data-i18n="dl_sub">Kostenlose Guides und Formulare als PDF – zum Vorbereiten auf deinen großen Tag.</p>
+    </div>
+    <div class="dl-grid">
+      <a class="dl-card dl-multi" download
+         data-de="downloads/Braut-Hautpflege-Guide_DE.pdf"
+         data-en="downloads/Bridal-Skincare-Guide_EN.pdf"
+         data-es="downloads/Guia-Cuidado-Piel-Nupcial_ES.pdf"
+         href="downloads/Braut-Hautpflege-Guide_DE.pdf">
+        <span class="dl-badge">PDF</span>
+        <span class="dl-name" data-i18n="dl_guide">Braut-Hautpflege & Self-Care Guide</span>
+        <span class="dl-desc" data-i18n="dl_guide_d">Deine Pflege-Routine von einem Monat bis zum Tag vor der Hochzeit.</span>
+        <span class="dl-get" data-i18n="dl_get">Download</span>
+      </a>
+      <a class="dl-card dl-multi" download
+         data-de="downloads/Hauttypformel_DE.pdf"
+         data-en="downloads/Skin-Type-Formula_EN.pdf"
+         data-es="downloads/Formula-Tipo-de-Piel_ES.pdf"
+         href="downloads/Hauttypformel_DE.pdf">
+        <span class="dl-badge">PDF</span>
+        <span class="dl-name" data-i18n="dl_formula">Hauttypformel</span>
+        <span class="dl-desc" data-i18n="dl_formula_d">Kurzer Fragebogen, damit ich dein Make-up perfekt auf deine Haut abstimme.</span>
+        <span class="dl-get" data-i18n="dl_get">Download</span>
+      </a>
+      <a class="dl-card" download href="downloads/Face-Chart-TheGlamCorner.pdf">
+        <span class="dl-badge">PDF</span>
+        <span class="dl-name" data-i18n="dl_face">Face Chart</span>
+        <span class="dl-desc" data-i18n="dl_face_d">Vorlage, um deinen Wunsch-Look zu skizzieren und festzuhalten.</span>
+        <span class="dl-get" data-i18n="dl_get">Download</span>
+      </a>
+      <a class="dl-card" download href="downloads/Preisliste-TheGlamCorner.pdf">
+        <span class="dl-badge">PDF</span>
+        <span class="dl-name" data-i18n="dl_price">Preisliste</span>
+        <span class="dl-desc" data-i18n="dl_price_d">Alle Leistungen, Pakete und Preise auf einen Blick.</span>
+        <span class="dl-get" data-i18n="dl_get">Download</span>
+      </a>
+    </div>
+  </div>
+</section>
+
 <!-- CONTACT -->
 <section class="contact" id="contact">
   <div class="wrap">
@@ -385,6 +446,12 @@ const I18N = {
     cat_addons:"Add-ons",s_lashes:"False Lashes",s_touchup:"Touch-Up Service (pro Stunde)",s_early:"Early Morning Fee (vor 7:00)",s_travel:"Anfahrt",
     note_all:"Alle Preise pro Person. Pakete inkl. einer Make-up-Artistin. Anfahrt nicht enthalten, sofern nicht anders angegeben.",
     gal_eyebrow:"Portfolio",gal_title:"Galerie",gal_sub:"Ein kleiner Einblick in meine Arbeit. Mehr auf Instagram.",gal_cta:"@glam_corner_beauty folgen",
+    nav_downloads:"Downloads",
+    dl_eyebrow:"Downloads",dl_title:"Dokumente & Guides",dl_sub:"Kostenlose Guides und Formulare als PDF – zum Vorbereiten auf deinen großen Tag.",
+    dl_guide:"Braut-Hautpflege & Self-Care Guide",dl_guide_d:"Deine Pflege-Routine von einem Monat bis zum Tag vor der Hochzeit.",
+    dl_formula:"Hauttypformel",dl_formula_d:"Kurzer Fragebogen, damit ich dein Make-up perfekt auf deine Haut abstimme.",
+    dl_face:"Face Chart",dl_face_d:"Vorlage, um deinen Wunsch-Look zu skizzieren und festzuhalten.",
+    dl_price:"Preisliste",dl_price_d:"Alle Leistungen, Pakete und Preise auf einen Blick.",dl_get:"Download",
     con_eyebrow:"Kontakt",con_title:"Termin anfragen",con_sub:"Erzähl mir von deinem Anlass – ich melde mich so schnell wie möglich.",
     con_h:"Lass uns reden",con_p:"Ob Hochzeit, Fotoshooting oder besonderer Abend – schreib mir und wir planen deinen perfekten Look.",con_area:"Braut- & Event-Make-up · Anfahrt auf Anfrage",
     f_name:"Name",f_email:"E-Mail",f_date:"Datum",f_service:"Leistung",f_msg:"Nachricht",f_send:"Anfrage senden",
@@ -410,6 +477,12 @@ const I18N = {
     cat_addons:"Add-ons",s_lashes:"False Lashes",s_touchup:"Touch-Up Service (per hour)",s_early:"Early Morning Fee (before 7:00)",s_travel:"Travel Fee",
     note_all:"All prices per person. Packages include one make-up artist. Travel not included unless stated.",
     gal_eyebrow:"Portfolio",gal_title:"Gallery",gal_sub:"A little glimpse of my work. See more on Instagram.",gal_cta:"Follow @glam_corner_beauty",
+    nav_downloads:"Downloads",
+    dl_eyebrow:"Downloads",dl_title:"Documents & Guides",dl_sub:"Free guides and forms as PDF – to prepare for your big day.",
+    dl_guide:"Bridal Skincare & Self-Care Guide",dl_guide_d:"Your skincare routine from one month to the day before the wedding.",
+    dl_formula:"Skin-Type Formula",dl_formula_d:"A short questionnaire so I can match your make-up perfectly to your skin.",
+    dl_face:"Face Chart",dl_face_d:"A template to sketch and capture your desired look.",
+    dl_price:"Price List",dl_price_d:"All services, packages and prices at a glance.",dl_get:"Download",
     con_eyebrow:"Contact",con_title:"Request a date",con_sub:"Tell me about your occasion — I'll get back to you as soon as possible.",
     con_h:"Let's talk",con_p:"Wedding, photoshoot or a special evening — write to me and we'll plan your perfect look.",con_area:"Bridal & event make-up · Travel on request",
     f_name:"Name",f_email:"Email",f_date:"Date",f_service:"Service",f_msg:"Message",f_send:"Send request",
@@ -435,6 +508,12 @@ const I18N = {
     cat_addons:"Extras",s_lashes:"Pestañas postizas",s_touchup:"Servicio de retoque (por hora)",s_early:"Suplemento madrugada (antes de 7:00)",s_travel:"Desplazamiento",
     note_all:"Todos los precios por persona. Los paquetes incluyen una maquilladora. Desplazamiento no incluido salvo indicación.",
     gal_eyebrow:"Portafolio",gal_title:"Galería",gal_sub:"Un pequeño vistazo a mi trabajo. Más en Instagram.",gal_cta:"Sigue a @glam_corner_beauty",
+    nav_downloads:"Descargas",
+    dl_eyebrow:"Descargas",dl_title:"Documentos y Guías",dl_sub:"Guías y formularios gratuitos en PDF – para preparar tu gran día.",
+    dl_guide:"Guía de cuidado de la piel nupcial",dl_guide_d:"Tu rutina de cuidado desde un mes hasta el día antes de la boda.",
+    dl_formula:"Fórmula de tipo de piel",dl_formula_d:"Un breve cuestionario para adaptar tu maquillaje perfectamente a tu piel.",
+    dl_face:"Face Chart",dl_face_d:"Una plantilla para dibujar y definir tu look deseado.",
+    dl_price:"Lista de precios",dl_price_d:"Todos los servicios, paquetes y precios de un vistazo.",dl_get:"Descargar",
     con_eyebrow:"Contacto",con_title:"Solicitar fecha",con_sub:"Cuéntame sobre tu ocasión — te responderé lo antes posible.",
     con_h:"Hablemos",con_p:"Boda, sesión de fotos o una noche especial — escríbeme y planeamos tu look perfecto.",con_area:"Maquillaje novias y eventos · Desplazamiento bajo petición",
     f_name:"Nombre",f_email:"Correo",f_date:"Fecha",f_service:"Servicio",f_msg:"Mensaje",f_send:"Enviar solicitud",
@@ -449,6 +528,10 @@ function setLang(lang){
   document.querySelectorAll('[data-i18n]').forEach(el=>{
     const k = el.getAttribute('data-i18n');
     if(I18N[lang] && I18N[lang][k]!==undefined) el.innerHTML = I18N[lang][k];
+  });
+  document.querySelectorAll('.dl-multi').forEach(a=>{
+    const f = a.getAttribute('data-'+lang);
+    if(f) a.setAttribute('href', f);
   });
   document.querySelectorAll('.lang button').forEach(b=>{
     b.classList.toggle('active', b.dataset.lang===lang);
