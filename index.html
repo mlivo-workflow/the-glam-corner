@@ -56,6 +56,9 @@
     font-weight:500;letter-spacing:.05em;color:var(--brown-soft);padding:5px 8px;border-radius:20px;transition:.2s}
   .lang button.active{background:var(--brown-dark);color:var(--cream)}
   .burger{display:none;background:none;border:none;font-size:1.5rem;color:var(--brown-dark);cursor:pointer}
+  .logo-badge{display:inline-block;background:url('logo.png') center/contain no-repeat;flex-shrink:0}
+  .nav-logo{width:50px;height:50px}
+  .hero-logo{width:118px;height:118px;margin:0 auto 4px}
 
   /* HERO */
   .hero{position:relative;min-height:88vh;display:flex;align-items:center;
@@ -177,7 +180,7 @@
 
 <header>
   <nav class="wrap">
-    <a href="#home" class="brand">The Glam Corner<small>by Beatriz Cantú</small></a>
+    <a href="#home" class="brand" aria-label="The Glam Corner"><span class="logo-badge nav-logo"></span></a>
     <div class="nav-links" id="navlinks">
       <a href="#about" data-i18n="nav_about">Über</a>
       <a href="#services" data-i18n="nav_services">Leistungen</a>
@@ -197,6 +200,7 @@
 <!-- HERO -->
 <section class="hero" id="home" style="padding:0">
   <div class="hero-inner wrap">
+    <span class="logo-badge hero-logo"></span>
     <p class="estd" data-i18n="hero_estd">Make Up Studio · Est. 2025</p>
     <h1 data-i18n="hero_title">Dein schönster Tag<br>verdient <em>Glam</em></h1>
     <p class="sub" data-i18n="hero_sub">Braut- & Event-Make-up und Hairstyling, das deine natürliche Schönheit unterstreicht – für Hochzeiten und besondere Momente.</p>
@@ -329,32 +333,32 @@
     </div>
     <div class="dl-grid">
       <a class="dl-card dl-multi" download
-         data-de="downloads/Braut-Hautpflege-Guide_DE.pdf"
-         data-en="downloads/Bridal-Skincare-Guide_EN.pdf"
-         data-es="downloads/Guia-Cuidado-Piel-Nupcial_ES.pdf"
-         href="downloads/Braut-Hautpflege-Guide_DE.pdf">
+         data-de="Braut-Hautpflege-Guide_DE.pdf"
+         data-en="Bridal-Skincare-Guide_EN.pdf"
+         data-es="Guia-Cuidado-Piel-Nupcial_ES.pdf"
+         href="Braut-Hautpflege-Guide_DE.pdf">
         <span class="dl-badge">PDF</span>
         <span class="dl-name" data-i18n="dl_guide">Braut-Hautpflege & Self-Care Guide</span>
         <span class="dl-desc" data-i18n="dl_guide_d">Deine Pflege-Routine von einem Monat bis zum Tag vor der Hochzeit.</span>
         <span class="dl-get" data-i18n="dl_get">Download</span>
       </a>
       <a class="dl-card dl-multi" download
-         data-de="downloads/Hauttypformel_DE.pdf"
-         data-en="downloads/Skin-Type-Formula_EN.pdf"
-         data-es="downloads/Formula-Tipo-de-Piel_ES.pdf"
-         href="downloads/Hauttypformel_DE.pdf">
+         data-de="Hauttypformel_DE.pdf"
+         data-en="Skin-Type-Formula_EN.pdf"
+         data-es="Formula-Tipo-de-Piel_ES.pdf"
+         href="Hauttypformel_DE.pdf">
         <span class="dl-badge">PDF</span>
         <span class="dl-name" data-i18n="dl_formula">Hauttypformel</span>
         <span class="dl-desc" data-i18n="dl_formula_d">Kurzer Fragebogen, damit ich dein Make-up perfekt auf deine Haut abstimme.</span>
         <span class="dl-get" data-i18n="dl_get">Download</span>
       </a>
-      <a class="dl-card" download href="downloads/Face-Chart-TheGlamCorner.pdf">
+      <a class="dl-card" download href="Face-Chart-TheGlamCorner.pdf">
         <span class="dl-badge">PDF</span>
         <span class="dl-name" data-i18n="dl_face">Face Chart</span>
         <span class="dl-desc" data-i18n="dl_face_d">Vorlage, um deinen Wunsch-Look zu skizzieren und festzuhalten.</span>
         <span class="dl-get" data-i18n="dl_get">Download</span>
       </a>
-      <a class="dl-card" download href="downloads/Preisliste-TheGlamCorner.pdf">
+      <a class="dl-card" download href="Preisliste-TheGlamCorner.pdf">
         <span class="dl-badge">PDF</span>
         <span class="dl-name" data-i18n="dl_price">Preisliste</span>
         <span class="dl-desc" data-i18n="dl_price_d">Alle Leistungen, Pakete und Preise auf einen Blick.</span>
@@ -376,9 +380,10 @@
       <div class="contact-info">
         <h3 data-i18n="con_h">Lass uns reden</h3>
         <p data-i18n="con_p">Ob Hochzeit, Fotoshooting oder besonderer Abend – schreib mir und wir planen deinen perfekten Look.</p>
-        <div class="info-item"><span class="ico">✉</span><a href="mailto:hello@theglamcorner.com">hello@theglamcorner.com</a></div>
+        <div class="info-item"><span class="ico">✉</span><a href="mailto:glamcornerbeauty@gmail.com">glamcornerbeauty@gmail.com</a></div>
         <div class="info-item"><span class="ico">◎</span><a href="https://www.instagram.com/glam_corner_beauty/" target="_blank" rel="noopener">@glam_corner_beauty</a></div>
-        <div class="info-item"><span class="ico">✦</span><span data-i18n="con_area">Braut- & Event-Make-up · Anfahrt auf Anfrage</span></div>
+        <div class="info-item"><span class="ico">✦</span><span data-i18n="con_cred">Dipl. Visagistin · Dipl. Make-up Artist</span></div>
+        <div class="info-item"><span class="ico">◈</span><span data-i18n="con_area">Enns, Linz &amp; Umgebung · Anfahrt auf Anfrage</span></div>
       </div>
 
       <!-- Replace YOUR_FORM_ID with a Formspree ID (see README) -->
@@ -453,7 +458,7 @@ const I18N = {
     dl_face:"Face Chart",dl_face_d:"Vorlage, um deinen Wunsch-Look zu skizzieren und festzuhalten.",
     dl_price:"Preisliste",dl_price_d:"Alle Leistungen, Pakete und Preise auf einen Blick.",dl_get:"Download",
     con_eyebrow:"Kontakt",con_title:"Termin anfragen",con_sub:"Erzähl mir von deinem Anlass – ich melde mich so schnell wie möglich.",
-    con_h:"Lass uns reden",con_p:"Ob Hochzeit, Fotoshooting oder besonderer Abend – schreib mir und wir planen deinen perfekten Look.",con_area:"Braut- & Event-Make-up · Anfahrt auf Anfrage",
+    con_h:"Lass uns reden",con_p:"Ob Hochzeit, Fotoshooting oder besonderer Abend – schreib mir und wir planen deinen perfekten Look.",con_area:"Enns, Linz & Umgebung · Anfahrt auf Anfrage",con_cred:"Dipl. Visagistin · Dipl. Make-up Artist",
     f_name:"Name",f_email:"E-Mail",f_date:"Datum",f_service:"Leistung",f_msg:"Nachricht",f_send:"Anfrage senden",
     f_opt_bridal:"Braut-Make-up",f_opt_package:"Braut-Paket (Basic/Pro/Gold)",f_opt_party:"Bridal Party",f_opt_event:"Social / Event",f_opt_other:"Sonstiges",
     f_note:"Deine Daten werden nur zur Bearbeitung deiner Anfrage genutzt.",
@@ -484,7 +489,7 @@ const I18N = {
     dl_face:"Face Chart",dl_face_d:"A template to sketch and capture your desired look.",
     dl_price:"Price List",dl_price_d:"All services, packages and prices at a glance.",dl_get:"Download",
     con_eyebrow:"Contact",con_title:"Request a date",con_sub:"Tell me about your occasion — I'll get back to you as soon as possible.",
-    con_h:"Let's talk",con_p:"Wedding, photoshoot or a special evening — write to me and we'll plan your perfect look.",con_area:"Bridal & event make-up · Travel on request",
+    con_h:"Let's talk",con_p:"Wedding, photoshoot or a special evening — write to me and we'll plan your perfect look.",con_area:"Enns, Linz & surroundings · Travel on request",con_cred:"Certified Make-up Artist & Visagiste",
     f_name:"Name",f_email:"Email",f_date:"Date",f_service:"Service",f_msg:"Message",f_send:"Send request",
     f_opt_bridal:"Bridal Make-up",f_opt_package:"Bridal Package (Basic/Pro/Gold)",f_opt_party:"Bridal Party",f_opt_event:"Social / Event",f_opt_other:"Other",
     f_note:"Your details are used only to process your request.",
@@ -515,7 +520,7 @@ const I18N = {
     dl_face:"Face Chart",dl_face_d:"Una plantilla para dibujar y definir tu look deseado.",
     dl_price:"Lista de precios",dl_price_d:"Todos los servicios, paquetes y precios de un vistazo.",dl_get:"Descargar",
     con_eyebrow:"Contacto",con_title:"Solicitar fecha",con_sub:"Cuéntame sobre tu ocasión — te responderé lo antes posible.",
-    con_h:"Hablemos",con_p:"Boda, sesión de fotos o una noche especial — escríbeme y planeamos tu look perfecto.",con_area:"Maquillaje novias y eventos · Desplazamiento bajo petición",
+    con_h:"Hablemos",con_p:"Boda, sesión de fotos o una noche especial — escríbeme y planeamos tu look perfecto.",con_area:"Enns, Linz y alrededores · Desplazamiento bajo petición",con_cred:"Maquilladora y visagista diplomada",
     f_name:"Nombre",f_email:"Correo",f_date:"Fecha",f_service:"Servicio",f_msg:"Mensaje",f_send:"Enviar solicitud",
     f_opt_bridal:"Maquillaje de novia",f_opt_package:"Paquete de novia (Basic/Pro/Gold)",f_opt_party:"Cortejo de novia",f_opt_event:"Social / Evento",f_opt_other:"Otro",
     f_note:"Tus datos se usan solo para gestionar tu solicitud.",
