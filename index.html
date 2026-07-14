@@ -352,18 +352,6 @@
         <span class="dl-desc" data-i18n="dl_formula_d">Kurzer Fragebogen, damit ich dein Make-up perfekt auf deine Haut abstimme.</span>
         <span class="dl-get" data-i18n="dl_get">Download</span>
       </a>
-      <a class="dl-card" download href="Face-Chart-TheGlamCorner.pdf">
-        <span class="dl-badge">PDF</span>
-        <span class="dl-name" data-i18n="dl_face">Face Chart</span>
-        <span class="dl-desc" data-i18n="dl_face_d">Vorlage, um deinen Wunsch-Look zu skizzieren und festzuhalten.</span>
-        <span class="dl-get" data-i18n="dl_get">Download</span>
-      </a>
-      <a class="dl-card" download href="Preisliste-TheGlamCorner.pdf">
-        <span class="dl-badge">PDF</span>
-        <span class="dl-name" data-i18n="dl_price">Preisliste</span>
-        <span class="dl-desc" data-i18n="dl_price_d">Alle Leistungen, Pakete und Preise auf einen Blick.</span>
-        <span class="dl-get" data-i18n="dl_get">Download</span>
-      </a>
     </div>
   </div>
 </section>
@@ -528,6 +516,7 @@ const I18N = {
   }
 };
 
+const PFX={de:'ab ',en:'from ',es:'desde '};
 function setLang(lang){
   document.documentElement.lang = lang;
   document.querySelectorAll('[data-i18n]').forEach(el=>{
@@ -541,6 +530,8 @@ function setLang(lang){
   document.querySelectorAll('.lang button').forEach(b=>{
     b.classList.toggle('active', b.dataset.lang===lang);
   });
+  document.querySelectorAll('.pkg .price').forEach(function(el){ if(!el.dataset.base) el.dataset.base=el.textContent.trim(); el.textContent=(PFX[lang]||'')+el.dataset.base; });
+  document.querySelectorAll('.amt').forEach(function(el){ var blk=el.closest('.price-block'); if(blk && blk.querySelector('[data-i18n="cat_addons"]')) return; if(!el.dataset.base) el.dataset.base=el.textContent.trim(); el.textContent=(PFX[lang]||'')+el.dataset.base; });
   try{ localStorage.setItem('glam_lang', lang); }catch(e){}
 }
 document.querySelectorAll('.lang button').forEach(b=>{
