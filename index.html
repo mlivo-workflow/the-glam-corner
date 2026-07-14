@@ -387,7 +387,7 @@
       </div>
 
       <!-- Replace YOUR_FORM_ID with a Formspree ID (see README) -->
-      <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+      <form id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
         <div>
           <label data-i18n="f_name">Name</label>
           <input type="text" name="name" required>
@@ -551,6 +551,17 @@ document.querySelectorAll('.lang button').forEach(b=>{
 const burger=document.getElementById('burger'), navlinks=document.getElementById('navlinks');
 burger.addEventListener('click',()=>navlinks.classList.toggle('open'));
 navlinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>navlinks.classList.remove('open')));
+
+// contact form: mailto fallback until Formspree is configured
+const cf=document.getElementById('contactForm');
+if(cf){ cf.addEventListener('submit',function(e){
+  if(cf.getAttribute('action').indexOf('YOUR_FORM_ID')===-1) return;
+  e.preventDefault();
+  const g=n=>{const el=cf.querySelector('[name="'+n+'"]');return el?el.value:'';};
+  const subj='Anfrage \u2013 The Glam Corner ('+g('name')+')';
+  const body='Name: '+g('name')+'\nE-Mail: '+g('email')+'\nDatum: '+g('date')+'\nLeistung: '+g('service')+'\n\nNachricht:\n'+g('message');
+  window.location.href='mailto:glamcornerbeauty@gmail.com?subject='+encodeURIComponent(subj)+'&body='+encodeURIComponent(body);
+}); }
 
 // year + saved lang
 document.getElementById('year').textContent=new Date().getFullYear();
